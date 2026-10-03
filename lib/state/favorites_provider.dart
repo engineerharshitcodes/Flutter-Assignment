@@ -20,6 +20,7 @@ class FavoritesProvider extends ChangeNotifier {
     notifyListeners();
 
     final prefs = await SharedPreferences.getInstance();
+
     await prefs.setStringList(
       'favorites',
       _favorites.map((id) => id.toString()).toList(),
@@ -33,7 +34,7 @@ class FavoritesProvider extends ChangeNotifier {
 
     _favorites
       ..clear()
-      ..addAll(saved.map(int.parse));
+      ..addAll(saved.map((id) => int.parse(id)));
 
     notifyListeners();
   }

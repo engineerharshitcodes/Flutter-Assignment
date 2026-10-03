@@ -3,11 +3,7 @@ class Pokemon {
   final String name;
   final String imageUrl;
 
-  Pokemon({
-    required this.id,
-    required this.name,
-    required this.imageUrl,
-  });
+  Pokemon({required this.id, required this.name, required this.imageUrl});
 
   factory Pokemon.fromJson(Map<String, dynamic> json) {
     final id = int.parse(
